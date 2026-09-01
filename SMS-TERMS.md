@@ -14,7 +14,7 @@ Message and data rates may apply to incoming alerts.
 You may opt out of receiving these automated alerts at any time by replying STOP, QUIT, END, CANCEL, or UNSUBSCRIBE. After sending the SMS message "STOP", you will receive one additional message confirming that you have been unsubscribed from the webhook system. No further messages will be sent.
 
 5. Customer Care / Support
-If you require assistance or are experiencing issues with the messaging program, reply with the keyword HELP for more assistance, or contact the system administrator directly at [Insert Email Address].
+If you require assistance or are experiencing issues with the messaging program, reply with the keyword HELP for more assistance, or contact the system administrator directly at [gerald83@gmail.com].
 
 6. Carrier Disclaimer
 Carriers are not liable for delayed or undelivered messages.
