@@ -1,179 +1,236 @@
-@@
--       body {
-+       * {
-+           box-sizing: border-box;
-+       }
-+
-+       body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f4f7f6;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
--           height: 100vh;
-+           min-height: 100vh;
-+           min-height: 100dvh;
-            margin: 0;
-+           padding: 24px;
-        }
-+
-        .container {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            max-width: 450px;
-            width: 100%;
-        }
--       h2 {
-+
-+       h1 {
-            margin-top: 0;
-            color: #2c3e50;
-            font-size: 24px;
-        }
-+
-+       .help-text {
-+           color: #666;
-+           font-size: 13px;
-+           margin: 8px 0 0;
-+       }
-+
-+       .status {
-+           min-height: 1.5em;
-+           margin: 16px 0 0;
-+           color: #176b35;
-+           font-size: 14px;
-+           font-weight: 600;
-+       }
-@@
-        input[type="text"],
-        input[type="tel"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
--           box-sizing: border-box;
-        }
-+
-+       input:focus-visible,
-+       button:focus-visible,
-+       a:focus-visible {
-+           outline: 3px solid rgba(0, 86, 179, 0.35);
-+           outline-offset: 2px;
-+       }
-@@
-        button:hover {
-            background-color: #004494;
-        }
-+
-+       @media (max-width: 520px) {
-+           body {
-+               align-items: flex-start;
-+               padding: 16px;
-+           }
-+
-+           .container {
-+               padding: 24px;
-+           }
-+       }
-+
-+       @media (prefers-reduced-motion: reduce) {
-+           *,
-+           *::before,
-+           *::after {
-+               scroll-behavior: auto !important;
-+           }
-+       }
-@@
--   <div class="container">
--       <h2>Admin Account Setup</h2>
-+   <main class="container" aria-labelledby="page-title">
-+       <h1 id="page-title">Admin Account Setup</h1>
-        <p class="subtitle">Internal IT / Developer Portal</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Internal Admin Portal - Account Setup</title>
+<style>
+
+       body {
+
+           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+           background-color: #f4f7f6;
+
+           color: #333;
+
+           display: flex;
+
+           justify-content: center;
+
+           align-items: center;
+
+           height: 100vh;
+
+           margin: 0;
+
+       }
+
+       .container {
+
+           background-color: #ffffff;
+
+           padding: 40px;
+
+           border-radius: 8px;
+
+           box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+           max-width: 450px;
+
+           width: 100%;
+
+       }
+
+       h2 {
+
+           margin-top: 0;
+
+           color: #2c3e50;
+
+           font-size: 24px;
+
+       }
+
+       p.subtitle {
+
+           font-size: 14px;
+
+           color: #666;
+
+           margin-bottom: 24px;
+
+       }
+
+       .form-group {
+
+           margin-bottom: 20px;
+
+       }
+
+       label {
+
+           display: block;
+
+           font-weight: 600;
+
+           margin-bottom: 8px;
+
+           font-size: 14px;
+
+       }
+
+       .optional-badge {
+
+           font-weight: normal;
+
+           color: #666;
+
+           font-size: 12px;
+
+       }
+
+       input[type="text"],
+
+       input[type="tel"] {
+
+           width: 100%;
+
+           padding: 10px;
+
+           border: 1px solid #ccc;
+
+           border-radius: 4px;
+
+           font-size: 16px;
+
+           box-sizing: border-box;
+
+       }
+
+       .checkbox-group {
+
+           display: flex;
+
+           align-items: flex-start;
+
+           margin-top: 20px;
+
+           background-color: #f8f9fa;
+
+           padding: 15px;
+
+           border: 1px solid #e9ecef;
+
+           border-radius: 4px;
+
+       }
+
+       .checkbox-group input {
+
+           margin-top: 4px;
+
+           margin-right: 12px;
+
+           cursor: pointer;
+
+       }
+
+       .checkbox-group label {
+
+           font-weight: 400;
+
+           font-size: 13px;
+
+           line-height: 1.5;
+
+           color: #555;
+
+           margin: 0;
+
+       }
+
+       .links {
+
+           margin-top: 10px;
+
+           font-size: 13px;
+
+       }
+
+       .links a {
+
+           color: #0056b3;
+
+           text-decoration: none;
+
+       }
+
+       .links a:hover {
+
+           text-decoration: underline;
+
+       }
+
+       button {
+
+           width: 100%;
+
+           padding: 12px;
+
+           background-color: #0056b3;
+
+           color: #ffffff;
+
+           border: none;
+
+           border-radius: 4px;
+
+           font-size: 16px;
+
+           font-weight: 600;
+
+           cursor: pointer;
+
+           margin-top: 24px;
+
+       }
+
+       button:hover {
+
+           background-color: #004494;
+
+       }
+</style>
+</head>
+<body>
+<div class="container">
+<h2>Admin Account Setup</h2>
+<p class="subtitle">Internal IT / Developer Portal</p>
+<form onsubmit="event.preventDefault(); alert('Account settings saved.');">
+<div class="form-group">
+<label for="adminName">Admin Name / ID</label>
+<input type="text" id="adminName" name="adminName" placeholder="e.g. SysAdmin-01" required>
+</div>
+<div class="form-group">
+<label for="phoneNumber">Mobile Phone Number <span class="optional-badge">(Optional)</span></label>
+<input type="tel" id="phoneNumber" name="phoneNumber" placeholder="(555) 555-5555">
+</div>
+<div class="checkbox-group">
+<!-- Removed the 'required' attribute here to pass the compliance check -->
+<input type="checkbox" id="consent" name="consent">
+<label for="consent">
+<strong>(Optional)</strong> By checking this box, I consent to receive automated SMS system alerts and webhook notifications. Message frequency varies. Message and data rates may apply. 
+<br><br>
+<span class="links">
+
+                       Review our <a href="SMS-TERMS.md" target="_blank">Terms of Service</a> and <a href="SMS-TERMS.md" target="_blank">Privacy Policy</a>.
+</span>
+</label>
+</div>
+<button type="submit">Save Account Settings</button>
+</form>
+</div>
+</body>
+</html>
  
--       <form onsubmit="event.preventDefault(); alert('Account settings saved.');">
-+       <form id="account-form">
-            <div class="form-group">
-                <label for="adminName">Admin Name / ID</label>
--               <input type="text" id="adminName" name="adminName" placeholder="e.g. SysAdmin-01" required>
-+               <input
-+                   type="text"
-+                   id="adminName"
-+                   name="adminName"
-+                   placeholder="e.g. SysAdmin-01"
-+                   autocomplete="username"
-+                   maxlength="100"
-+                   required
-+               >
-            </div>
- 
-            <div class="form-group">
-                <label for="phoneNumber">Mobile Phone Number <span class="optional-badge">(Optional)</span></label>
--               <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="(555) 555-5555">
-+               <input
-+                   type="tel"
-+                   id="phoneNumber"
-+                   name="phoneNumber"
-+                   placeholder="(555) 555-5555"
-+                   autocomplete="tel"
-+                   aria-describedby="phone-help"
-+               >
-+               <p class="help-text" id="phone-help">
-+                   Required only when you opt in to SMS alerts.
-+               </p>
-            </div>
- 
-            <div class="checkbox-group">
--               <!-- Removed the 'required' attribute here to pass the compliance check -->
-                <input type="checkbox" id="consent" name="consent">
-                <label for="consent">
-                    <strong>(Optional)</strong> By checking this box, I consent to receive automated SMS system alerts and webhook notifications. Message frequency varies. Message and data rates may apply.
-                    <br><br>
-                    <span class="links">
--                       Review our <a href="SMS-TERMS.md" target="_blank">Terms of Service</a> and <a href="SMS-TERMS.md" target="_blank">Privacy Policy</a>.
-+                       Review our
-+                       <a href="SMS-TERMS.md" target="_blank" rel="noopener noreferrer">Terms of Service</a>
-+                       and
-+                       <a href="PRIVACY.md" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
-                    </span>
-                </label>
-            </div>
- 
-            <button type="submit">Save Account Settings</button>
-+           <p id="form-status" class="status" role="status" aria-live="polite"></p>
-        </form>
--   </div>
-+   </main>
-+
-+   <script>
-+       const form = document.getElementById("account-form");
-+       const phoneNumber = document.getElementById("phoneNumber");
-+       const consent = document.getElementById("consent");
-+       const status = document.getElementById("form-status");
-+
-+       function updatePhoneRequirement() {
-+           phoneNumber.required = consent.checked;
-+           phoneNumber.setAttribute(
-+               "aria-required",
-+               String(consent.checked)
-+           );
-+       }
-+
-+       consent.addEventListener("change", updatePhoneRequirement);
-+       updatePhoneRequirement();
-+
-+       form.addEventListener("submit", (event) => {
-+           event.preventDefault();
-+
-+           if (!form.reportValidity()) {
-+               status.textContent = "";
-+               return;
-+           }
-+
-+           // Replace this demo behavior with an authenticated API request.
-+           status.textContent = "Account settings saved.";
-+       });
-+   </script>
