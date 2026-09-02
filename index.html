@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Internal Admin Portal - SMS Provisioning</title>
-<style>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Internal Admin Portal - Account Setup</title>
+   <style>
        body {
            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
            background-color: #f4f7f6;
@@ -41,6 +41,11 @@
            font-weight: 600;
            margin-bottom: 8px;
            font-size: 14px;
+       }
+       .optional-badge {
+           font-weight: normal;
+           color: #666;
+           font-size: 12px;
        }
        input[type="text"],
        input[type="tel"] {
@@ -98,33 +103,40 @@
        button:hover {
            background-color: #004494;
        }
-</style>
+   </style>
 </head>
 <body>
-<div class="container">
-<h2>System Alerts Provisioning</h2>
-<p class="subtitle">Internal IT / Developer Portal for Webhook Notifications</p>
-<form onsubmit="event.preventDefault(); alert('Number provisioned successfully.');">
-<div class="form-group">
-<label for="adminName">Admin Name / ID</label>
-<input type="text" id="adminName" name="adminName" placeholder="e.g. SysAdmin-01" required>
-</div>
-<div class="form-group">
-<label for="phoneNumber">Mobile Phone Number</label>
-<input type="tel" id="phoneNumber" name="phoneNumber" placeholder="(555) 555-5555" required>
-</div>
-<div class="checkbox-group">
-<input type="checkbox" id="consent" name="consent" required>
-<label for="consent">
-                   By submitting my phone number, I consent to receive automated SMS system alerts and webhook notifications. Message frequency varies. Message and data rates may apply.
-<br><br>
-<span class="links">
+
+   <div class="container">
+       <h2>Admin Account Setup</h2>
+       <p class="subtitle">Internal IT / Developer Portal</p>
+
+       <form onsubmit="event.preventDefault(); alert('Account settings saved.');">
+           <div class="form-group">
+               <label for="adminName">Admin Name / ID</label>
+               <input type="text" id="adminName" name="adminName" placeholder="e.g. SysAdmin-01" required>
+           </div>
+
+           <div class="form-group">
+               <label for="phoneNumber">Mobile Phone Number <span class="optional-badge">(Optional)</span></label>
+               <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="(555) 555-5555">
+           </div>
+
+           <div class="checkbox-group">
+               <!-- Removed the 'required' attribute here to pass the compliance check -->
+               <input type="checkbox" id="consent" name="consent">
+               <label for="consent">
+                   <strong>(Optional)</strong> By checking this box, I consent to receive automated SMS system alerts and webhook notifications. Message frequency varies. Message and data rates may apply. 
+                   <br><br>
+                   <span class="links">
                        Review our <a href="SMS-TERMS.md" target="_blank">Terms of Service</a> and <a href="SMS-TERMS.md" target="_blank">Privacy Policy</a>.
-</span>
-</label>
-</div>
-<button type="submit">Enable SMS Alerts</button>
-</form>
-</div>
+                   </span>
+               </label>
+           </div>
+
+           <button type="submit">Save Account Settings</button>
+       </form>
+   </div>
+
 </body>
 </html>
